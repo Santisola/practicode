@@ -11,8 +11,9 @@ export const POSTS_QUERY = defineQuery(`*[_type=="post"]{
       current
     },
     content,
-      author->{
+    author->{
       name,
-      bio
+      bio,
+      foto
     }
 }`);

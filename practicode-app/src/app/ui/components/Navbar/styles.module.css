@@ -1,3 +1,12 @@
 .header {
     background-color: var(--card-background);
 }
+
+.mainLogo {
+    max-width: 180px;
+}
+
+.mainLogo img {
+    display: block;
+    width: 100%;
+}
