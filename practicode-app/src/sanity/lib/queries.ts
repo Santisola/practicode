@@ -17,3 +17,9 @@ export const POSTS_QUERY = defineQuery(`*[_type=="post"]{
       foto
     }
 }`);
+
+export const TAGS_QUERY = defineQuery(`*[
+  _type == "tag"
+] {
+  name
+}`);
