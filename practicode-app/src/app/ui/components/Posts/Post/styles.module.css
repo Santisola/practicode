@@ -1,0 +1,5 @@
+.postCard {
+    border-radius: var(--card-border-radius);
+    border: var(--card-border);
+    overflow: hidden;
+}

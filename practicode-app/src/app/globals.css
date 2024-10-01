@@ -22,4 +22,14 @@
 body {
 	background-color: var(--base-background);
 	color: var(--text-color);
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+	align-items: stretch;
+}
+
+.tagsList {
+	border-radius: var(--card-border-radius);
+	border: var(--card-border);
+	height: fit-content;
 }

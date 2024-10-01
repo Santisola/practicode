@@ -1,5 +1,7 @@
 .header {
-    background-color: var(--card-background);
+    border-bottom: var(--card-border);
+    background-color: rgba(15, 15, 16, .75);
+    backdrop-filter: blur(2px);
 }
 
 .mainLogo {
