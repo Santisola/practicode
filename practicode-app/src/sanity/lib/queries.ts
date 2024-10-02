@@ -18,7 +18,7 @@ export const POSTS_QUERY = defineQuery(`*[_type=="post"]{
     }
 }`);
 
-export const POSTS_QUERY_BY_SLUG = (slug: string) => defineQuery(`*[_type=="post" && slug.current == ${slug}]{
+export const POSTS_QUERY_BY_SLUG = defineQuery(`*[_type=="post" && slug.current == $slug]{
   _id,
   _createdAt,
   title,
