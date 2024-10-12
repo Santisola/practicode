@@ -20,35 +20,37 @@ export default async function Categoria({params: {tag}}: TagsPageParams) {
             <ul className="grid grid-cols-4 gap-x-14 gap-y-16">
                 {posts.map((post: Post, index:number) => (
                     <li key={index}>
-                        <Link href={post.slug.current}>
-                            <article>
-                                <div className="relative h-60 rounded-lg overflow-hidden mb-6">
+                        <article>
+                            <div className="relative h-60 rounded-lg overflow-hidden mb-6">
+                                <Link href={post.slug.current}>
                                     <Image
                                         src={String(urlFor(post.banner))}
                                         alt={post.title}
                                         fill={true}
                                         objectFit='cover'
                                     />
-                                </div>
-                                <div className="flex gap-6">
-                                    <PostDate date={post._createdAt} className={'mt-1 text-sm'} />
-                                    <TagBadge tagData={post.tag} />
-                                </div>
-                                <h3 className="text-2xl font-bold my-5">{post.title}</h3>
-                                <p className="mt-4 text-muted-foreground text-clamped">{post.summary}</p>
-                                <div className="mt-6 flex gap-4 items-center">
-                                    <Image
-                                        src={String(urlFor(post.author.foto))}
-                                        alt={post.author.name}
-                                        width={40}
-                                        height={40}
-                                        objectFit='cover'
-                                        className="rounded-full"
-                                    />
-                                    <strong>{post.author.name}</strong>
-                                </div>
-                            </article>
-                        </Link>
+                                </Link>
+                            </div>
+                            <div className="flex gap-6">
+                                <PostDate date={post._createdAt} className={'mt-1 text-sm'} />
+                                <TagBadge tagData={post.tag} />
+                            </div>
+                            <h3 className="text-2xl font-bold my-5">
+                                <Link href={post.slug.current}>{post.title}</Link>
+                            </h3>
+                            <p className="mt-4 text-muted-foreground text-clamped">{post.summary}</p>
+                            <div className="mt-6 flex gap-4 items-center">
+                                <Image
+                                    src={String(urlFor(post.author.foto))}
+                                    alt={post.author.name}
+                                    width={40}
+                                    height={40}
+                                    objectFit='cover'
+                                    className="rounded-full"
+                                />
+                                <strong>{post.author.name}</strong>
+                            </div>
+                        </article>
                     </li>
                 ))}
             </ul>

@@ -8,31 +8,33 @@ import { TagBadge } from '../../TagBadge';
 
 export default async function Post({post}: {post: Post}) {
     return (
-        <Link href={post.slug.current}>
-            <article className={classes.postCard}>
-                <div className="imageContainer relative h-60">
+        <article className={classes.postCard}>
+            <div className="imageContainer relative h-60">
+                <Link href={post.slug.current}>
                     <Image
                         src={String(urlFor(post.banner))}
                         alt={post.title}
                         fill={true}
                         objectFit='cover'
                     />
+                </Link>
+            </div>
+            <div className='p-4'>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span className='flex items-center gap-1'>
+                        <UserIcon width={16} height={16} />
+                        <span className='mt-1'>{post.author.name}</span>
+                    </span>
+                    <PostDate date={post._createdAt} className='mt-1' />
                 </div>
-                <div className='p-4'>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className='flex items-center gap-1'>
-                            <UserIcon width={16} height={16} />
-                            <span className='mt-1'>{post.author.name}</span>
-                        </span>
-                        <PostDate date={post._createdAt} className='mt-1' />
-                    </div>
-                    <h2 className='text-2xl font-bold mt-2'>{post.title}</h2>
-                    <p className='mt-4 text-muted-foreground'>{post.summary}</p>
-                    <div className='mt-9 flex gap-4'>
-                        <TagBadge tagData={post.tag} />
-                    </div>
+                <h2 className='text-2xl font-bold mt-2'>
+                    <Link href={post.slug.current}>{post.title}</Link>
+                </h2>
+                <p className='mt-4 text-muted-foreground'>{post.summary}</p>
+                <div className='mt-9 flex gap-4'>
+                    <TagBadge tagData={post.tag} />
                 </div>
-            </article>
-        </Link>
+            </div>
+        </article>
     )
 }
