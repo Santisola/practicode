@@ -13,8 +13,6 @@ interface PageParams {
 export default async function Post({params: {postSlug}}: PageParams) {
   const post = await client.fetch(POSTS_QUERY_BY_SLUG, {slug: postSlug});
 
-  console.log('POST', post);
-
   return (
     post.length > 0 && <>
       <section className='container m-auto py-6'>

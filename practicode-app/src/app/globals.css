@@ -33,3 +33,11 @@ body {
 	border: var(--card-border);
 	height: fit-content;
 }
+
+.text-clamped {
+    display: -webkit-box;
+	line-clamp: 3;
+	-webkit-line-clamp: 3;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}

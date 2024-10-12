@@ -3,7 +3,12 @@ interface Post {
     _createdAt: string,
     title: string,
     summary: string,
-    tag: object,
+    tag: {
+        name: string,
+        slug: {
+            current: string
+        }
+    },
     banner: object,
     slug: {
         current: string
