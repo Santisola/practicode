@@ -21,11 +21,11 @@ const postData = `{
     }
 }`
 
-export const POSTS_QUERY = defineQuery(`*[_type=="post"] ${postData}`);
+export const POSTS_QUERY = defineQuery(`*[_type=="post"] | order(_createdAt desc) ${postData}`);
 
 export const POSTS_QUERY_BY_SLUG = defineQuery(`*[_type=="post" && slug.current == $slug] ${postData}`);
 
-export const POSTS_QUERY_BY_TAG = defineQuery(`*[_type=="post" && tag->slug.current == $tagSlug] ${postData}`);
+export const POSTS_QUERY_BY_TAG = defineQuery(`*[_type=="post" && tag->slug.current == $tagSlug] | order(_createdAt desc) ${postData}`);
 
 export const TAGS_QUERY = defineQuery(`*[
   _type == "tag"
