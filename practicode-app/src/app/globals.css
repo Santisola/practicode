@@ -7,6 +7,8 @@
 	--card-background: #18181B;
 	--text-color: #E7E7E4;
 	--primary-color: #E7E7E4;
+	--accent-color: #0059f7;
+	--main-transition: all 150ms ease;
 
 	--danger: #cc3333;
 

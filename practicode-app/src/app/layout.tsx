@@ -7,7 +7,10 @@ import { Navbar } from "./ui/components/Navbar/Navbar";
 import { Footer } from "./ui/components/Footer/Navbar/Footer";
 
 // const inter = Inter({ subsets: ["latin"] });
-const nunito = Nunito({ subsets: ["latin"] });
+const nunito = Nunito({
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'],
+  subsets: ["latin"]
+});
 
 export const metadata: Metadata = {
   title: "Practicode",
@@ -20,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={nunito.className}>
         <Navbar />
         <main className="h-full">

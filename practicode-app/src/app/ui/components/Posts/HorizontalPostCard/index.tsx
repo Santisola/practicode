@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { PostDate } from '../../PostDate';
 import { TagBadge } from '../../TagBadge';
 
-export default async function Post({post}: {post: Post}) {
+export default async function HorizontalPostCard({post}: {post: Post}) {
     return (
         <article className={classes.postCard}>
             <div className="imageContainer relative h-60">

@@ -1,7 +1,7 @@
 import { client } from '@/sanity/lib/client';
 import { POSTS_QUERY, TAGS_QUERY } from '@/sanity/lib/queries';
 import PostsList from './ui/components/Posts/PostsList/PostsList';
-import Link from 'next/link';
+import CategoriesSidebar from './ui/components/CategoriesSidebar';
 
 export default async function Home() {
   const posts = await client.fetch(POSTS_QUERY);
@@ -11,16 +11,11 @@ export default async function Home() {
     <>
       <section className='container m-auto py-6 flex gap-6'>
         <div className='flex gap-10'>
-          <PostsList posts={posts} />
+          <PostsList posts={posts} horizontalLayout={true} liClasses='mb-6' />
+          
           <aside className='w-5/12 p-4 tagsList'>
             <h2 className='text-2xl font-bold mb-4'>Categorías</h2>
-            <ul>
-              {tags.map((tag: any, i: number) => (
-                <li key={i} className='block text-sm font-medium hover:underline underline-offset-4 mb-2'>
-                  <Link href={`/categorias/${tag.slug.current}`}>{tag.name}</Link>
-                </li>
-              ))}
-            </ul>
+            <CategoriesSidebar tags={tags} />
           </aside>
         </div>
       </section>

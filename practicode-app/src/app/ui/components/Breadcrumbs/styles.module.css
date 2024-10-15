@@ -1,0 +1,13 @@
+.item {
+    font-weight: normal;
+    transition: var(--main-transition);
+}
+
+.item:hover {
+    color: var(--accent-color);
+}
+
+.activeItem {
+    font-weight: 800;
+    color: var(--accent-color);
+}
