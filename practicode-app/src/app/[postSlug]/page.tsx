@@ -31,7 +31,7 @@ export default async function Post({params: {postSlug}}: PageParams) {
   
   return (
     post.length > 0 && <>
-      <section className='container m-auto py-6'>
+      <section className='container m-auto py-6 px-4'>
         <Breadcrumbs items={breadcrumbsItems} />
         <article>
           <h2 className="text-3xl font-bold mb-4">{post[0].title}</h2>

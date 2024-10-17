@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
 import "./globals.css";
-import { Navbar } from "./ui/components/Navbar/Navbar";
 import { Footer } from "./ui/components/Footer/Navbar/Footer";
+import { Header } from "./ui/components/Header/Header";
 
 // const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={nunito.className}>
-        <Navbar />
+        <Header />
         <main className="h-full">
           {children}
         </main>

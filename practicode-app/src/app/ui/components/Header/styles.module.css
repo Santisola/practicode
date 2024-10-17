@@ -12,3 +12,11 @@
     display: block;
     width: 100%;
 }
+
+.closed > div {
+    display: none;
+}
+
+.opened nav {
+    right: 0;
+}

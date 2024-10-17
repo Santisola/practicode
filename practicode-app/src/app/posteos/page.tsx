@@ -16,12 +16,12 @@ export default async function Categoria() {
     }]
     
     return (
-        <section className="container m-auto py-9">
+        <section className="container m-auto py-9 px-4">
             <Breadcrumbs items={breadcrumbsItems} />
             <PostsList
                 posts={posts}
                 horizontalLayout={false}
-                ulClasses={`grid grid-cols-4 gap-x-14 gap-y-16 ${classes.gridPostsContainer}`}
+                ulClasses={`grid md:grid-cols-4 gap-x-14 gap-y-16 ${classes.gridPostsContainer}`}
             />
         </section>
     )

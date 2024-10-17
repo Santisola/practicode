@@ -9,7 +9,7 @@ interface BreadcrumbsItem {
 export default function Breadcrumbs({items}: {items: BreadcrumbsItem[]}) {
   return (
     <nav className="mb-6">
-        <ul className="flex items-center gap-2">
+        <ul className="flex flex-wrap items-center gap-2">
             {items.map((item, i) => (
                 <>
                 <Link href={item.url}>

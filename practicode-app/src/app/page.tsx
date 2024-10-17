@@ -9,8 +9,8 @@ export default async function Home() {
 
   return (
     <>
-      <section className='container m-auto py-6 flex gap-6'>
-        <div className='flex gap-10'>
+      <section className='container m-auto py-6 px-4 flex gap-6'>
+        <div className='md:flex gap-10'>
           <PostsList posts={posts} horizontalLayout={true} liClasses='mb-6' />
           
           <aside className='w-5/12 p-4 tagsList'>

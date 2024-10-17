@@ -28,7 +28,7 @@ export default async function HorizontalPostCard({post}: {post: Post}) {
                     <PostDate date={post._createdAt} className='mt-1' />
                 </div>
                 <h2 className='text-2xl font-bold mt-2'>
-                    <Link href={`/${post.slug.current}`}>{post.title}</Link>
+                    <Link href={`/${post.slug.current}`} className='hover:text-accent transition-all'>{post.title}</Link>
                 </h2>
                 <p className='mt-4 text-muted-foreground'>{post.summary}</p>
                 <div className='mt-9 flex gap-4'>
