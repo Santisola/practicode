@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './styles.module.css'
 import Link from 'next/link'
 import { DrawerMenu } from './DrawerMenu';
-import useWindowSize from '@/hooks/useWindowSize';
+import useWindowSize from '@/app/hooks/useWindowSize';
 
 export const Navbar = () => {
     const { width } = useWindowSize()
