@@ -17,6 +17,12 @@
     display: none;
 }
 
+.closed nav {
+    max-width: 0;
+    overflow: hidden;
+}
+
 .opened nav {
     right: 0;
+    max-width: 50%;
 }

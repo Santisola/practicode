@@ -6,10 +6,12 @@ import { DrawerMenu } from './DrawerMenu';
 import useWindowSize from '@/hooks/useWindowSize';
 
 export const Navbar = () => {
-    const size = useWindowSize()
-    console.log('SIZE', size);
+    const { width } = useWindowSize()
+
+    if(!width) return <></>;
+    
 	return (
-        size.width <= 768 ?
+        width <= 768 ?
         <>
             <DrawerMenu />
         </>
