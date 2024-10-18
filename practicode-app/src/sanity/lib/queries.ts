@@ -13,7 +13,14 @@ const postData = `{
     slug {
       current
     },
-    content,
+    content[]{
+      ...,
+      _type == "image" => {
+        ...,
+        "src": asset->url,
+        alt,
+      }
+    },
     author->{
       name,
       bio,

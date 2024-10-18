@@ -19,6 +19,8 @@ const config: Config = {
       darkBackground: "#0F0F10"
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 export default config;

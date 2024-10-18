@@ -63,6 +63,18 @@ export const postType = defineType({
                 defineArrayMember({
                     type: 'code',
                 }),
+                defineArrayMember({
+                    type: 'image',
+                    fields: [
+                        {
+                            type: 'string',
+                            name: 'alt',
+                            title: 'Alt',
+                            description: 'The alt text of the image',
+                        },
+
+                    ],
+                }),
             ],
             validation: rule => rule.required()
         })
