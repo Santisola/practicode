@@ -33,6 +33,12 @@ export const postType = defineType({
             validation: rule => rule.required().min(15)
         }),
         defineField({
+            title: 'Es destacado?',
+            name: 'highlight',
+            type: 'boolean',
+            description: 'Destaque para posteos, sirve para carruseles de destacados, filtros, etc'
+        }),
+        defineField({
             name: 'banner',
             title: 'Foto',
             type: 'image',

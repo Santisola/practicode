@@ -5,6 +5,7 @@ const postData = `{
     _createdAt,
     title,
     summary,
+    highlight,
     tag->{
       name,
       slug
@@ -31,6 +32,8 @@ const postData = `{
 export const POSTS_QUERY = defineQuery(`*[_type=="post"] | order(_createdAt desc) ${postData}`);
 
 export const POSTS_QUERY_BY_SLUG = defineQuery(`*[_type=="post" && slug.current == $slug] ${postData}`);
+
+export const POSTS_QUERY_HIGHLIGHT = defineQuery(`*[_type=="post" && highlight][0...$maxPosts] ${postData}`);
 
 export const POSTS_QUERY_BY_TAG = defineQuery(`*[_type=="post" && tag->slug.current == $tagSlug] | order(_createdAt desc) ${postData}`);
 

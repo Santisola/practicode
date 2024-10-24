@@ -3,7 +3,7 @@ import { PortableText } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { POSTS_QUERY_BY_SLUG } from "@/sanity/lib/queries";
 import CodeBlock from "./Blocks/CodeBlock";
-import Breadcrumbs from "../ui/components/Breadcrumbs";
+import Breadcrumbs from "../../ui/components/Breadcrumbs";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/sanityImage";
 import ImageBlock from "./Blocks/ImageBlock";

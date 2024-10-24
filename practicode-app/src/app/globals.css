@@ -30,7 +30,7 @@ body {
 	align-items: stretch;
 }
 
-.tagsList {
+.sidebarSection {
 	border-radius: var(--card-border-radius);
 	border: var(--card-border);
 	height: fit-content;

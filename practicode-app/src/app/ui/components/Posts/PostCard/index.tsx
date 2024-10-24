@@ -8,7 +8,7 @@ export default async function PostCard({post}: {post: Post}) {
   return (
     <article>
         <div className="relative h-60 rounded-lg overflow-hidden mb-6">
-            <Link href={`/${post.slug.current}`}>
+            <Link href={`/post/${post.slug.current}`}>
                 <Image
                     src={String(urlFor(post.banner))}
                     alt={post.title}
@@ -22,7 +22,7 @@ export default async function PostCard({post}: {post: Post}) {
             <TagBadge tagData={post.tag} />
         </div>
         <h3 className="text-2xl font-bold my-5">
-            <Link href={`/${post.slug.current}`} className='hover:text-accent transition-all'>{post.title}</Link>
+            <Link href={`/post/${post.slug.current}`} className='hover:text-accent transition-all'>{post.title}</Link>
         </h3>
         <p className="mt-4 text-muted-foreground text-clamped">{post.summary}</p>
         <div className="mt-6 flex gap-4 items-center">
