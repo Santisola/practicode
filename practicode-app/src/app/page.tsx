@@ -12,12 +12,12 @@ export default async function Home() {
     <>
       <section className='container m-auto py-6 px-4 flex gap-6'>
         <div className='md:flex gap-10'>
-          <div className='w-4/5'>
+          <div className='md:w-4/5'>
             <PostsList posts={posts} horizontalLayout={true} liClasses='mb-6' />
           </div>
           
-          <aside className='w-1/5'>
-            <div className='p-4 sidebarSection'>
+          <aside className='md:w-1/5'>
+            <div className='p-4 pb-0 sidebarSection'>
               <h2 className='text-2xl font-bold mb-4'>Categorías</h2>
               <CategoriesSidebar tags={tags} />
             </div>

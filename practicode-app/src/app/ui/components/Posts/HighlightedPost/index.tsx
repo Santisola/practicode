@@ -5,7 +5,7 @@ import { PostDate } from "../../PostDate";
 
 export default function HighlightedPost({post}: {post: Post}) {
   return (
-    <article className="flex gap-4 mb-8">
+    <article className="flex gap-4 mb-4">
         <div className="w-20 h-20 shrink-0 rounded-md overflow-hidden relative">
             <Link href={`/post/${post.slug.current}`}>
                 <Image

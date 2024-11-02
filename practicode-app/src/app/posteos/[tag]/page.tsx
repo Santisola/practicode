@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client"
 import { POSTS_QUERY_BY_TAG } from "@/sanity/lib/queries"
 import classes from '../styles.module.css'
 import Breadcrumbs from "@/app/ui/components/Breadcrumbs";
+import { redirect } from "next/navigation";
 
 interface TagsPageParams {
     params: {
@@ -12,6 +13,10 @@ interface TagsPageParams {
 
 export default async function Categoria({params: {tag}}: TagsPageParams) {
     const posts = await client.fetch(POSTS_QUERY_BY_TAG, {tagSlug: tag});
+    
+    if(!posts || posts.length === 0) {
+        redirect('/not-found')
+    }
     
     const breadcrumbsItems = [{
         url: '/',

@@ -1,5 +1,5 @@
 import { PortableText } from "next-sanity";
-
+import { redirect } from 'next/navigation'
 import { client } from "@/sanity/lib/client";
 import { POSTS_QUERY_BY_SLUG } from "@/sanity/lib/queries";
 import CodeBlock from "./Blocks/CodeBlock";
@@ -16,6 +16,10 @@ interface PageParams {
 
 export default async function Post({params: {postSlug}}: PageParams) {
   const post = await client.fetch(POSTS_QUERY_BY_SLUG, {slug: postSlug});
+
+  if(!post || post.length === 0) {
+    redirect('/not-found')
+  }
 
   const breadcrumbsItems = [
     {
@@ -52,7 +56,6 @@ export default async function Post({params: {postSlug}}: PageParams) {
               code: ({ value }: any) => {
                 return <CodeBlock value={value} classes={'mt-4'} />
               },
-
               image: ImageBlock
             },
             block: {
